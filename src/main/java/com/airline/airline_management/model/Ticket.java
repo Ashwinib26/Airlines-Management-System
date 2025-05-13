@@ -23,6 +23,14 @@ public class Ticket {
 
     private LocalDateTime bookingDate;
 
+    public void setFlight(Flight flight) {
+        this.flight = flight;
+    }
+
+    public void setBookingDate(LocalDateTime bookingDate) {
+        this.bookingDate = bookingDate;
+    }
+
     // Getters and Setters
 }
 
