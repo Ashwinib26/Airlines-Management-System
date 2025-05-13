@@ -1,5 +1,16 @@
 package com.airline.airline_management.service;
 
+
+import com.airline.airline_management.model.Flight;
+import com.airline.airline_management.model.Ticket;
+import com.airline.airline_management.repository.FlightRepository;
+import com.airline.airline_management.repository.TicketRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.Optional;
+
 @Service
 public class TicketService {
     @Autowired
@@ -16,7 +27,8 @@ public class TicketService {
     }
 
     public Ticket getTicket(Long id) {
-        return ticketRepo.findById(id).orElseThrow(() -> new RuntimeException("Ticket not found"));
+        return ticketRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Ticket not found"));
     }
 
     public void deleteTicket(Long id) {

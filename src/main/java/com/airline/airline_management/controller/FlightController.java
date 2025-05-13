@@ -1,5 +1,13 @@
 package com.airline.airline_management.controller;
 
+import com.airline.airline_management.model.Flight;
+import com.airline.airline_management.service.FlightService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @RestController
 @RequestMapping("/flights")
 public class FlightController {
@@ -18,4 +26,5 @@ public class FlightController {
                 .orElse(ResponseEntity.notFound().build());
     }
 }
+
 

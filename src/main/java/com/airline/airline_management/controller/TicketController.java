@@ -1,5 +1,12 @@
 package com.airline.airline_management.controller;
 
+import com.airline.airline_management.model.Ticket;
+import com.airline.airline_management.service.TicketService;
+//import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 @RestController
 @RequestMapping("/tickets")
 public class TicketController {
@@ -7,10 +14,10 @@ public class TicketController {
     private TicketService ticketService;
 
     @PostMapping
-    public ResponseEntity<Ticket> bookTicket(@RequestParam Long flightId, @RequestBody Ticket ticket) {
-        Ticket saved = ticketService.createTicket(ticket, flightId);
-        return ResponseEntity.ok(saved);
-    }
+//    public ResponseEntity<Ticket> bookTicket(@RequestParam Long flightId, @Valid @RequestBody Ticket ticket) {
+//        Ticket saved = ticketService.createTicket(ticket, flightId);
+//        return ResponseEntity.ok(saved);
+//    }
 
     @GetMapping("/{id}")
     public Ticket getTicket(@PathVariable Long id) {
@@ -23,4 +30,3 @@ public class TicketController {
         return ResponseEntity.noContent().build();
     }
 }
-
