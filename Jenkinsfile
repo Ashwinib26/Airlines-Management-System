@@ -9,8 +9,8 @@ pipeline {
     environment {
         // Set your EC2 details here
         EC2_USER = 'ec2-user'
-        EC2_HOST = 'your-ec2-public-ip'
-        EC2_KEY_PATH = '/var/jenkins_home/.ssh/your-key.pem' // Jenkins's .ssh directory
+        EC2_HOST = '3.110.136.121'
+        EC2_KEY_PATH = 'airlines-keypair.pem' // Jenkins's .ssh directory
     }
 
     stages {
