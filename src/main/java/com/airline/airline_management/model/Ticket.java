@@ -21,5 +21,13 @@ public class Ticket {
     @JoinColumn(name = "flight_id")
     private Flight flight;
 
+    public void setFlight(Flight flight) {
+        this.flight = flight;
+    }
+
+    public void setBookingDate(LocalDateTime bookingDate) {
+        this.bookingDate = bookingDate;
+    }
+
     // Getters and Setters
 }
