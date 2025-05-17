@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/YOUR_USERNAME/airline-management.git' // ✅ Replace with your real repo
+                git 'https://github.com/Ashwinib26/Airlines-Management-System.git' // ✅ Replace with your real repo
             }
         }
 
