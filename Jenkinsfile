@@ -1,15 +1,15 @@
 pipeline {
     agent {
         docker {
-            image 'maven:3.9.6-eclipse-temurin-17' // Java + Maven Docker image
-            args '-v $HOME/.m2:/root/.m2' // Use Maven cache
+            image 'maven:3.9.6-eclipse-temurin-17'
+            args '-v $HOME/.m2:/root/.m2'
         }
     }
 
     environment {
         EC2_USER = 'ec2-user'
         EC2_HOST = '3.110.136.121'
-        EC2_KEY_PATH = '/var/lib/jenkins/.ssh/airlines-keypair.pem' // Adjust path for Jenkins user
+        EC2_KEY_PATH = '/var/lib/jenkins/.ssh/airlines-keypair.pem' //path for Jenkins user(EC2-pipeline)
         JAR_NAME = 'airlines-management-0.0.1-SNAPSHOT.jar'
         REMOTE_PATH = '/home/ec2-user/app.jar'
     }
@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/Ashwinib26/Airlines-Management-System.git' // ✅ Replace with your real repo
+                git 'https://github.com/Ashwinib26/Airlines-Management-System.git'
             }
         }
 
